@@ -42,3 +42,9 @@ user_pref(
   "extensions.webextensions.ExtensionStorageIDB.migrated.uBlock0@raymondhill.net",
   true
 );
+user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.addon@darkreader.org", true);
+user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+user_pref("identity.fxaccounts.enabled", false);
+user_pref("extensions.pocket.enabled", false);
+user_pref("signon.rememberSignons", false);
