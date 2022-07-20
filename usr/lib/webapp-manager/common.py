@@ -181,7 +181,6 @@ class WebAppManager():
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "FlashPeak Slimjet", "flashpeak-slimjet", "/usr/bin/flashpeak-slimjet"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Ungoogled Chromium (Flatpak)", "/var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium", "/var/lib/flatpak/exports/bin/com.github.Eloston.UngoogledChromium"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chromium (Flatpak)", "/var/lib/flatpak/exports/bin/org.chromium.Chromium", "/var/lib/flatpak/exports/bin/org.chromium.Chromium"))
-        browsers.append(Browser(BROWSER_TYPE_FALKON, "Falkon", "falkon", "/usr/bin/falkon"))
         return browsers
 
     def delete_webbapp(self, webapp):
@@ -213,6 +212,7 @@ class WebAppManager():
                 firefox_profile_path = os.path.join(firefox_profiles_dir, codename)
                 exec_string = ("Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=" + icon + " " + browser.exec_path +
                                     " --class WebApp-" + codename +
+                                    " --name WebApp-" + codename +                               
                                     " --profile " + firefox_profile_path +
                                     " --no-remote ")
                 if privatewindow:
@@ -230,6 +230,7 @@ class WebAppManager():
                 firefox_profile_path = os.path.join(firefox_profiles_dir, codename)
                 exec_string = ("Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=" + icon + " " + browser.exec_path +
                                     " --class WebApp-" + codename +
+                                    " --name WebApp-" + codename + 
                                     " --profile " + firefox_profile_path +
                                     " --no-remote ")
                 if privatewindow:
