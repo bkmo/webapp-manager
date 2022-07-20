@@ -109,9 +109,3 @@ user_pref("network.captive-portal-service.enabled", false); // [FF52+]
 /* 0361: disable Network Connectivity checks [FF65+]
  * [1] https://bugzilla.mozilla.org/1460537 ***/
 user_pref("network.connectivity-service.enabled", false);
-
-user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
-user_pref("identity.fxaccounts.enabled", false);
-user_pref("extensions.pocket.enabled", false);
-user_pref("signon.rememberSignons", false);
