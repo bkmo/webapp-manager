@@ -56,9 +56,8 @@ FIREFOX_PROFILES_DIR = os.path.join(ICE_DIR, "firefox")
 FIREFOX_FLATPAK_PROFILES_DIR = os.path.expanduser("~/.var/app/org.mozilla.firefox/data/ice/firefox")
 LIBREWOLF_FLATPAK_PROFILES_DIR = os.path.expanduser("~/.var/app/io.gitlab.librewolf-community/data/ice/librewolf")
 EPIPHANY_PROFILES_DIR = os.path.join(ICE_DIR, "epiphany")
-FALKON_PROFILES_DIR = os.path.join(ICE_DIR, "falkon")
 ICONS_DIR = os.path.join(ICE_DIR, "icons")
-BROWSER_TYPE_FIREFOX, BROWSER_TYPE_FIREFOX_FLATPAK, BROWSER_TYPE_LIBREWOLF_FLATPAK, BROWSER_TYPE_CHROMIUM, BROWSER_TYPE_EPIPHANY, BROWSER_TYPE_FALKON = range(6)
+BROWSER_TYPE_FIREFOX, BROWSER_TYPE_FIREFOX_FLATPAK, BROWSER_TYPE_LIBREWOLF_FLATPAK, BROWSER_TYPE_CHROMIUM, BROWSER_TYPE_EPIPHANY, = range(5)
 
 class Browser():
 
@@ -131,7 +130,7 @@ class WebAppLauncher():
 class WebAppManager():
 
     def __init__(self):
-        for directory in [ICE_DIR, APPS_DIR, PROFILES_DIR, FIREFOX_PROFILES_DIR, FIREFOX_FLATPAK_PROFILES_DIR, ICONS_DIR, EPIPHANY_PROFILES_DIR, FALKON_PROFILES_DIR]:
+        for directory in [ICE_DIR, APPS_DIR, PROFILES_DIR, FIREFOX_PROFILES_DIR, FIREFOX_FLATPAK_PROFILES_DIR, ICONS_DIR, EPIPHANY_PROFILES_DIR, ]:
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
@@ -161,6 +160,7 @@ class WebAppManager():
         browsers.append(Browser(BROWSER_TYPE_FIREFOX_FLATPAK, "Firefox (Flatpak)", "/var/lib/flatpak/exports/bin/org.mozilla.firefox", "/var/lib/flatpak/exports/bin/org.mozilla.firefox"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Brave", "brave", "/usr/bin/brave"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chrome", "google-chrome-stable", "/usr/bin/google-chrome-stable"))
+        browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chrome (Beta)", "google-chrome-beta", "/usr/bin/google-chrome-beta"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chrome (Flatpak)", "/var/lib/flatpak/exports/bin/com.google.Chrome", "/var/lib/flatpak/exports/bin/com.google.Chrome"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chromium", "chromium", "/usr/bin/chromium"))
         browsers.append(Browser(BROWSER_TYPE_CHROMIUM, "Chromium (chromium-browser)", "chromium-browser", "/usr/bin/chromium-browser"))
@@ -212,7 +212,7 @@ class WebAppManager():
                 firefox_profile_path = os.path.join(firefox_profiles_dir, codename)
                 exec_string = ("Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=" + icon + " " + browser.exec_path +
                                     " --class WebApp-" + codename +
-                                    " --name WebApp-" + codename +                               
+                                    " --name WebApp-" + codename +
                                     " --profile " + firefox_profile_path +
                                     " --no-remote ")
                 if privatewindow:
@@ -222,15 +222,18 @@ class WebAppManager():
                 desktop_file.write(exec_string + url + "'\n")
                 # Create a Firefox profile
                 shutil.copytree('/usr/share/webapp-manager/firefox/profile', firefox_profile_path)
-                if navbar:
+                if  navbar:
                     shutil.copy('/usr/share/webapp-manager/firefox/userChrome-with-navbar.css', os.path.join(firefox_profile_path, "chrome", "userChrome.css"))
+                    shutil.copy('/usr/share/webapp-manager/firefox/userjs_navbar.js', os.path.join(firefox_profile_path, "user.js"))
+                    shutil.copy('/usr/share/webapp-manager/firefox/extensions_navbar.json', os.path.join(firefox_profile_path, "extensions.json"))
+
             elif browser.browser_type == BROWSER_TYPE_LIBREWOLF_FLATPAK:
                 # LibreWolf flatpak
                 firefox_profiles_dir = LIBREWOLF_FLATPAK_PROFILES_DIR
                 firefox_profile_path = os.path.join(firefox_profiles_dir, codename)
                 exec_string = ("Exec=sh -c 'XAPP_FORCE_GTKWINDOW_ICON=" + icon + " " + browser.exec_path +
                                     " --class WebApp-" + codename +
-                                    " --name WebApp-" + codename + 
+                                    " --name WebApp-" + codename +
                                     " --profile " + firefox_profile_path +
                                     " --no-remote ")
                 if privatewindow:

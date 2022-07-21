@@ -1,0 +1,74 @@
+/**
+ * DESCRIPTION
+ * Contrary to Chromium, Firefox does not provide any kind of native App Mode.
+ * The solutions for this found throughout the internet of hiding navbar,
+ * menubar, tabbar, and whatnot, certainly work for certain situations.
+ * However, they meet their limitations once you do – at least temporarily –
+ * need an address bar, want to use the back/forward buttons (not the
+ * right-click menu), or in case some extension's auto-update force-opens
+ * a new foreground tab over your active tab, and there is no way whatsoever
+ * of closing the new tab, switching to the old tab, or anything to continue
+ * watching your video or whatever were doing and have the "App Mode" set up
+ * for.
+ *
+ * This userChrome.css hides any toolbars that cannot be hidden via the
+ * Firefox GUI itself. It hides the tabbar as long as there is only one tab.
+ * It hides the address bar with navigation buttons by making them a thin,
+ * semi-transparent line at the top of the content window. If that thin area
+ * is hovered by the mouse cursor, or if the address bar otherwise gets focus
+ * (e.g. F6 key or Ctrl+L), the address/navigation bar gets extended and is
+ * fully usable, and is re-hidden again upon loosing focus (e.g. clicking
+ * into page content area). Hide Menu Bar and Bookmarks Toolbar via Firefox
+ * options if you don't want them shown.
+ */
+
+/* The #nav-bar and #tabbrowser-tabs bits were NOT tested in
+ * Firefox pre-Quantum! They might not work at all!
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+/* START - Hide nav bar (minimize to half-transparent thin line), and show on hover */
+#nav-bar {
+  transition: ease-in-out 300ms all;
+}
+
+#nav-bar {
+  min-height: 3px;
+  max-height: 3px;
+  margin-top: -10px;
+  opacity: 0.2;
+}
+#nav-bar:focus-within,
+#nav-bar:hover,
+#nav-bar:active {
+  min-height: unset;
+  max-height: unset;
+  margin-top: unset;
+  opacity: unset;
+}
+/* END - Hide nav bar (minimize to half-transparent thin line), and show on hover */
+
+/* START - Hide tab bar when there's only one tab left
+   SOURCE; https://gist.github.com/BenoitAverty/af633ee20e27f48f9ba7178451432206 */
+#tabbrowser-tabs, #tabbrowser-tabs > .tabbrowser-arrowscrollbox {
+  min-height: 0 !important;
+}
+
+/* Thanks to @Speravir for making it work again in the latest versions. */
+#tabbrowser-tabs tab[first-visible-tab="true"][last-visible-tab="true"] {
+  visibility: collapse;
+}
+
+/* I don't use tabs so I just hide the new tab button. You should be able to use a similar trick as the rule above with
+css siblings selectors if you want to keep it when the tab bar is visible. */
+#tabbrowser-tabs .tabs-newtab-button {
+  visibility: collapse !important;
+}
+
+#tabbrowser-tabs tab {
+  min-height: var(--tab-min-height)
+}
+/* END - Hide tab bar when there's only one tab left */
+
+#statuspanel {
+     display: none !important;
+}

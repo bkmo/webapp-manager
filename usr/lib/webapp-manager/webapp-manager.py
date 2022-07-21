@@ -176,8 +176,8 @@ class WebAppManagerWindow():
 
         # Combox box
         category_model = Gtk.ListStore(str,str) # CATEGORY_ID, CATEGORY_NAME
-        category_model.append(["Network",_("Internet")])
         category_model.append(["WebApps",_("Web")])
+        category_model.append(["Network",_("Internet")])
         category_model.append(["Utility",_("Accessories")])
         category_model.append(["Game",_("Games")])
         category_model.append(["Graphics",_("Graphics")])
@@ -248,7 +248,7 @@ class WebAppManagerWindow():
         except Exception as e:
             print (e)
 
-        dlg.set_version("__DEB_VERSION__")
+        dlg.set_version("1.2.5.5")
         dlg.set_icon_name("webapp-manager")
         dlg.set_logo_icon_name("webapp-manager")
         dlg.set_website("https://www.github.com/linuxmint/webapp-manager")
@@ -338,7 +338,7 @@ class WebAppManagerWindow():
         self.category_combo.set_active(0)
         self.browser_combo.set_active(0)
         self.isolated_switch.set_active(True)
-        self.navbar_switch.set_active(False)
+        self.navbar_switch.set_active(True)
         self.privatewindow_switch.set_active(False)
         for widget in self.add_specific_widgets:
             widget.show()
