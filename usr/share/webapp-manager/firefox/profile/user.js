@@ -48,8 +48,12 @@ user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("signon.rememberSignons", false);
+user_pref("media.autoplay.blocking_policy", 2);
+user_pref("media.autoplay.default", 5);
+user_pref("media.autoplay.block-event.enabled", true);
+user_pref("media.autoplay.allow-extension-background-pages", false);
 
-** TELEMETRY ***/
+/** TELEMETRY ***/
 /* 0330: disable new data submission [FF41+]
  * If disabled, no policy is shown or upload takes place, ever
  * [1] https://bugzilla.mozilla.org/1195552 ***/
