@@ -13,7 +13,7 @@ Right-click an empty area of the Web page to show the context menu. In most brow
 How to open links in my main browser?
 -------------------------------------
 
-Firefox opens externals links in your default browser using `xdg-open`. This is achieved through an extension that comes pre-installed called "WebApp Manager - Open URLs external"
+Firefox opens externals links in new tabs, or copy link and paste it to your default browser.
 
 Chromium and Chrome WebApps open external links in the default browser.
 
