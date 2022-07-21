@@ -29,10 +29,6 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 // Manjaro specific workaround
 user_pref("distribution.Manjaro.bookmarksProcessed", true);
 
-// Support for custom browser: protocol for opening links in main browser
-user_pref("network.protocol-handler.expose.browser", false);
-user_pref("security.external_protocol_requires_permission", false);
-
 // Enable uBlock and extension for browser: protocol by default
 user_pref(
   "extensions.webextensions.ExtensionStorageIDB.migrated.screenshots@mozilla.org",
