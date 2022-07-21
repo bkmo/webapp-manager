@@ -68,3 +68,7 @@ css siblings selectors if you want to keep it when the tab bar is visible. */
   min-height: var(--tab-min-height)
 }
 /* END - Hide tab bar when there's only one tab left */
+
+#statuspanel {
+     display: none !important;
+}
