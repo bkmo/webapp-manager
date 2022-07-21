@@ -1,4 +1,13 @@
-webapp-manager (1.2.6.1) vanessa; urgency=medium
+
+webapp-manager (1.2.7.0) ; urgency=medium
+
+  * new README
+  * fix changelog
+  * Nav Bar ON autohide Nav Bar default
+  * uBlock and Dark-Reader addons pre-installed and enabled
+ -- Bkmo fork first release
+
+webapp-manager (1.2.3) vanessa; urgency=medium
 
   * l10n: Update translations
   * l10n: Update files

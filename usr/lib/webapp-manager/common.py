@@ -243,6 +243,9 @@ class WebAppManager():
                 shutil.copytree('/usr/share/webapp-manager/firefox/profile', firefox_profile_path)
                 if navbar:
                     shutil.copy('/usr/share/webapp-manager/firefox/userChrome-with-navbar.css', os.path.join(firefox_profile_path, "chrome", "userChrome.css"))
+                    shutil.copy('/usr/share/webapp-manager/firefox/userjs_navbar.js', os.path.join(firefox_profile_path, "user.js"))
+                    shutil.copy('/usr/share/webapp-manager/firefox/extensions_navbar.json', os.path.join(firefox_profile_path, "extensions.json"))
+
             elif browser.browser_type == BROWSER_TYPE_EPIPHANY:
                 # Epiphany based
                 epiphany_profile_path = os.path.join(EPIPHANY_PROFILES_DIR, "org.gnome.Epiphany.WebApp-" + codename)
