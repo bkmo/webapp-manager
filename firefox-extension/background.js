@@ -23,7 +23,8 @@ browser.tabs.onUpdated.addListener((tabId, { url }) => {
 
   // Allow anything that isnt http or https. E.x. about:config
 
-    if (url.startsWith('http:addons.mozilla.org') && url.startsWith('https:addons.mozilla.org')) {
+    if (url.startsWith('http:addons.mozilla.org') && url.startsWith('https:addons.mozilla.org') return
+
     if (!url.startsWith('http:') && !url.startsWith('https:')) {
     // New tab and we aren't redirecting it so focus it instead
     if (isNewTab && !url.startsWith('browser:')) {
