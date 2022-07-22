@@ -1,4 +1,9 @@
 
+webapp-manager (1.2.7.6) ; urgency=medium
+
+  * Fixed browser redirect adding local page whitelisting
+
+
 webapp-manager (1.2.7.2) ; urgency=medium
 
   * Fix license in about for Arch PKGBUILD
