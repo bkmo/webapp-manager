@@ -20,10 +20,16 @@ browser.tabs.onUpdated.addListener((tabId, { url }) => {
 
   // If it's id 1 then it's the main tab so ignore
   if (tabId === 1) return
+    // Allow addons.mozilla.org
 
-  // Allow anything that isnt http or https. E.x. about:config
+      if (url.startsWith('http:addons.mozilla.org') && url.startsWith('https:addons.mozilla.org')) {
+    // New tab and we aren't redirecting it so focus it instead
+    if (isNewTab && !url.startsWith('browser:')) {
+      browser.tabs.update(tabId, { active: true })
+     }
+    return
 
-    if (url.startsWith('http:addons.mozilla.org') && url.startsWith('https:addons.mozilla.org') return
+    // Allow anything that isnt http or https. E.x. about:config
 
     if (!url.startsWith('http:') && !url.startsWith('https:')) {
     // New tab and we aren't redirecting it so focus it instead
