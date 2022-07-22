@@ -15,10 +15,10 @@ Right-click an empty area of the Web page to show the context menu. In most brow
 How to open links in my main browser?
 -------------------------------------
 
-For Firefox, all links are always opened within the WebApp, either directly or using a new tab.
-To open a link in your main browser, right-click anywhere, select `Copy link location` and paste the link in your main browser.
+Firefox opens externals links in your default browser using `xdg-open`. This is achieved through an extension that comes pre-installed called "WebApp Manager - Open URLs external"
 
 Chromium and Chrome WebApps open external links in the default browser.
+
 
 How to use tabs and navigation in Firefox?
 ---------------------------
