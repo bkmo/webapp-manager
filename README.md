@@ -44,10 +44,10 @@ How to add extensions in Firefox (AdBlock etc.)?
 
 NOTE: Firefox comes with uBlock and Dark Reader pre-added and 
       uBlock Origen enabled.
-      Use the hamburger menu on the right of the dropdown Nav Bar
+      Use the hamburger icon on the right of the dropdown Nav Bar
       or the below method to enable/disable them.
 
-With Nav Bar ON you can go to Hamburger menu Addons and Themes
+With Nav Bar ON you can go to Hamburger Menu--Addons and Themes
 
 With Navbar OFF
 Press and release the <kbd>Alt</kbd> key to show the main menubar.
