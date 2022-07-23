@@ -42,12 +42,15 @@ Press <kbd>Ctrl</kbd> when clicking a link to open it in a new tab.
 How to add extensions in Firefox (AdBlock etc.)?
 ------------------------------------------------
 
-NOTE: Firefox comes with uBlock and Dark Reader pre-added and enabled.
+NOTE: Firefox comes with uBlock and Dark Reader pre-added and 
+      uBlock Origen enabled.
       Use the hamburger menu on the right of the dropdown Nav Bar
-      or the below method to disable them.
+      or the below method to enable/disable them.
 
+With Nav Bar ON you can go to Hamburger menu Addons and Themes
+
+With Navbar OFF
 Press and release the <kbd>Alt</kbd> key to show the main menubar.
-
 You can then reach the `Add-Ons` from the `Tool` menu.
 
 How to add extensions in Chromium based browsers (AdBlock etc.)?
