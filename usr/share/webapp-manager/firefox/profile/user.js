@@ -13,6 +13,16 @@ user_pref("browser.tabs.inTitlebar", 0);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("network.cookie.lifetimePolicy", 0);
 
+//my additions to webapp-manger user.js
+user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
+user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
+user_pref("identity.fxaccounts.enabled", false);
+user_pref("extensions.pocket.enabled", false);
+user_pref("signon.rememberSignons", false);
+user_pref("media.autoplay.blocking_policy", 2);
+user_pref("media.autoplay.default", 5);
+
+
 // Disables "Recommend extensions as you browse" and "Recommend features as you browse"
 // https://support.mozilla.org/en-US/kb/recommendations-firefox
 user_pref(
@@ -29,30 +39,21 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 // Manjaro specific workaround
 user_pref("distribution.Manjaro.bookmarksProcessed", true);
 
+// Support for custom browser: protocol for opening links in main browser
+user_pref("network.protocol-handler.expose.browser", false);
+user_pref("security.external_protocol_requires_permission", false);
+
 // Enable uBlock and extension for browser: protocol by default
 user_pref(
-  "extensions.webextensions.ExtensionStorageIDB.migrated.screenshots@mozilla.org",
-  true
-);
+  "extensions.webextensions.ExtensionStorageIDB.migrated.screenshots@mozilla.org", true);
 user_pref(
-  "extensions.webextensions.ExtensionStorageIDB.migrated.uBlock0@raymondhill.net",
-  true
-);
-
+  "extensions.webextensions.ExtensionStorageIDB.migrated.uBlock0@raymondhill.net", true);
+//my additions to ublock and extensions adding my extensions
 user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.addon@darkreader.org", true);
-
-
 //user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.{d320c473-63c2-47ab-87f8-693b1badb5e3}", true);
-user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
-user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
-user_pref("identity.fxaccounts.enabled", false);
-user_pref("extensions.pocket.enabled", false);
-user_pref("signon.rememberSignons", false);
-user_pref("media.autoplay.blocking_policy", 2);
-user_pref("media.autoplay.default", 5);
-user_pref("media.autoplay.block-event.enabled", true);
-user_pref("media.autoplay.allow-extension-background-pages", false);
 
+
+//final additions by me from arkenfox user.js
 /** TELEMETRY ***/
 /* 0330: disable new data submission [FF41+]
  * If disabled, no policy is shown or upload takes place, ever
@@ -113,33 +114,6 @@ user_pref("network.captive-portal-service.enabled", false); // [FF52+]
 /* 0361: disable Network Connectivity checks [FF65+]
  * [1] https://bugzilla.mozilla.org/1460537 ***/
 user_pref("network.connectivity-service.enabled", false);
-// user_pref("full-screen-api.ignore-widgets", true);
-// Disables "Recommend extensions as you browse" and "Recommend features as you browse"
-// https://support.mozilla.org/en-US/kb/recommendations-firefox
-user_pref(
-  "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.addons",
-  false
-);
-user_pref(
-  "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features",
-  false
-);
+user_pref("full-screen-api.ignore-widgets", true);
 
-// Disable bookmark bar by default
-user_pref("browser.toolbars.bookmarks.visibility", "never");
-// Manjaro specific workaround
-user_pref("distribution.Manjaro.bookmarksProcessed", true);
 
-// Support for custom browser: protocol for opening links in main browser
-user_pref("network.protocol-handler.expose.browser", false);
-user_pref("security.external_protocol_requires_permission", false);
-
-// Enable uBlock and extension for browser: protocol by default
-user_pref(
-  "extensions.webextensions.ExtensionStorageIDB.migrated.screenshots@mozilla.org",
-  true
-);
-user_pref(
-  "extensions.webextensions.ExtensionStorageIDB.migrated.uBlock0@raymondhill.net",
-  true
-);
