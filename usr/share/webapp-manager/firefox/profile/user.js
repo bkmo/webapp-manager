@@ -12,6 +12,7 @@ user_pref("browser.tabs.drawInTitlebar", false);
 user_pref("browser.tabs.inTitlebar", 0);
 user_pref("browser.contentblocking.category", "strict");
 user_pref("network.cookie.lifetimePolicy", 0);
+user_pref("browser.sessionstore.resume_from_crash", false);
 
 //my additions to webapp-manger user.js
 user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
