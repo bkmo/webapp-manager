@@ -130,7 +130,7 @@ class WebAppLauncher():
 class WebAppManager():
 
     def __init__(self):
-        for directory in [ICE_DIR, APPS_DIR, PROFILES_DIR, FIREFOX_PROFILES_DIR, FIREFOX_FLATPAK_PROFILES_DIR, ICONS_DIR, EPIPHANY_PROFILES_DIR, ]:
+        for directory in [ICE_DIR, APPS_DIR, PROFILES_DIR, FIREFOX_PROFILES_DIR, ICONS_DIR, EPIPHANY_PROFILES_DIR, ]:
             if not os.path.exists(directory):
                 os.makedirs(directory)
 
