@@ -54,7 +54,7 @@ user_pref(
   "extensions.webextensions.ExtensionStorageIDB.migrated.uBlock0@raymondhill.net", true);
 //my additions to ublock and extensions adding my extensions
 user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.addon@darkreader.org", true);
-user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.{d320c473-63c2-47ab-87f8-693b1badb5e3}", true);
+//user_pref("extensions.webextensions.ExtensionStorageIDB.migrated.{d320c473-63c2-47ab-87f8-693b1badb5e3}", true);
 
 
 //final additions by me from arkenfox user.js
