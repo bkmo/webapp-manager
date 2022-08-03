@@ -15,3 +15,7 @@ TabsToolbar {
 #main-window[sizemode="maximized"] #content-deck {
   padding-top: 8px;
 }
+
+#statuspanel {
+     display: none !important;
+}
