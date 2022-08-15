@@ -18,21 +18,11 @@ user_pref("browser.sessionstore.max_windows_undo", 0);
 user_pref("browser.sessionstore.resume_from_crash", false);
 
 //my additions to webapp-manger user.js
-user_pref("extensions.getAddons.showPane", false); // [HIDDEN PREF]
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("signon.rememberSignons", false);
 user_pref("media.autoplay.blocking_policy", 2);
-user_pref("media.autoplay.default", 5);
-user_pref("privacy.clearOnShutdown.offlineApps", true);
-user_pref("privacy.clearOnShutdown.sessions", false);
-user_pref("privacy.history.custom", true);
-user_pref("privacy.partition.network_state.ocsp_cache", true);
-user_pref("privacy.purge_trackers.date_in_cookie_database", "0");
-user_pref("privacy.query_stripping.enabled", true);
-user_pref("privacy.sanitize.pending", "[{\"id\":\"shutdown\",\"itemsToClear\":[\"cache\",\"cookies\",\"offlineApps\",\"history\",\"formdata\",\"downloads\"],\"options\":{}},{\"id\":\"newtab-container\",\"itemsToClear\":[],\"options\":{}}]");
-user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
 
 // Disables "Recommend extensions as you browse" and "Recommend features as you browse"
