@@ -22,7 +22,7 @@ user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("identity.fxaccounts.enabled", false);
 user_pref("extensions.pocket.enabled", false);
 user_pref("signon.rememberSignons", false);
-user_pref("media.autoplay.blocking_policy", 2);
+//user_pref("media.autoplay.blocking_policy", 2);
 user_pref("widget.use-xdg-desktop-portal.file-picker", 1);
 
 // Disables "Recommend extensions as you browse" and "Recommend features as you browse"
