@@ -238,7 +238,7 @@ class WebAppManagerWindow():
         dlg.set_program_name(_("Web Apps"))
         dlg.set_comments(_("Run websites as if they were apps"))
         try:
-            h = open('/usr/share/common-licenses/GPL', encoding="utf-8")
+            h = open('/usr/share/webapp-manager/common-licenses/LICENSE', encoding="utf-8")
             s = h.readlines()
             gpl = ""
             for line in s:
@@ -248,7 +248,7 @@ class WebAppManagerWindow():
         except Exception as e:
             print (e)
 
-        dlg.set_version("__DEB_VERSION__")
+        dlg.set_version("1.2.8.4")
         dlg.set_icon_name("webapp-manager")
         dlg.set_logo_icon_name("webapp-manager")
         dlg.set_website("https://github.com/bkmo/webapp-manager-bkmo/tree/firefox-improvements")
